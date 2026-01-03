@@ -1,0 +1,11 @@
+com/construction/manager/repository/ContactRepository.class
+com/construction/manager/controller/ProjectController.class
+com/construction/manager/controller/ContactController.class
+com/construction/manager/repository/ProjectRepository.class
+com/construction/manager/model/Project.class
+com/construction/manager/service/ContactService.class
+com/construction/manager/model/Project$ProjectBuilder.class
+com/construction/manager/service/ProjectService.class
+com/construction/manager/model/Contact.class
+com/construction/manager/ConstructionManagerApplication.class
+com/construction/manager/model/Contact$ContactBuilder.class

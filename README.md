@@ -64,6 +64,9 @@ classDiagram
 3. Access the dashboard:
    Open [http://localhost:8080](http://localhost:8080) in your browser.
 
+> [!TIP]
+> Check out our [**Contributing Guide**](CONTRIBUTING.md) for a deep dive into the project's architecture and coding standards for junior developers.
+
 ---
 
 ## 🛠️ Tech Stack & Key Concepts
@@ -71,7 +74,7 @@ classDiagram
 ### Backend
 - **Spring Boot 3**: The backbone of the application.
 - **Spring Data JPA**: Handles database interactions without writing boilerplate SQL.
-- **Lombok**: Reduces verbosity with `@Data`, `@Builder`, and `@NoArgsConstructor`.
+- **POJOs with Explicit Boilers**: To ensure compatibility across all environments, we use explicit Getters, Setters, and Builders instead of Lombok.
 - **H2 Database**: An in-memory database for rapid development and zero-config setup.
 
 ### Frontend
@@ -85,14 +88,21 @@ classDiagram
 
 ## ☁️ Deployment to IBM Cloud
 
-We've optimized this project for **IBM Cloud Code Engine**. You can deploy using Docker or the automated script provided.
+We've optimized this project for **IBM Cloud Code Engine**. 
+
+**Live Application:** [https://construct-flow.24p0om0es615.us-south.codeengine.appdomain.cloud](https://construct-flow.24p0om0es615.us-south.codeengine.appdomain.cloud)  
+**IBM Cloud Console:** [Access Code Engine Dashboard](https://cloud.ibm.com/codeengine/project/us-south/02e9d4df-3d19-4ea1-a993-cd650adb5013/application/construct-flow/configuration)
+
+You can deploy using Docker or the automated script provided.
 
 ### Option 1: Automated Script (Recommended)
-We've included a helper script to handle the build and pivot to the cloud:
+We've included a helper script to handle dependencies, build, and deployment:
 ```bash
 chmod +x deploy-ibm.sh
 ./deploy-ibm.sh [YOUR_RESOURCE_GROUP] [REGION]
 ```
+> [!NOTE]
+> The script automatically checks for the `code-engine` CLI plugin and local Maven installation, attempting to resolve missing dependencies where possible.
 
 ### Option 2: Docker / Container Registry
 1. Build the image:
@@ -107,11 +117,15 @@ chmod +x deploy-ibm.sh
 
 ---
 
-## 💡 Notes for Juniors
+---
 
-- **Entities**: Check `src/main/java/com/construction/manager/model`. Pay attention to how `@OneToMany` and `@ManyToOne` are configured to prevent circular references in JSON using `@JsonIgnore`.
-- **Services**: All business logic lives in the `service` package. This keeps the `controller` thin and easy to test.
-- **Frontend State**: The `app.js` file manages a small local state for contacts and projects to provide a snappy, SPA-like experience without complex frameworks.
+## 🤖 Antigravity Development Logs
+
+The recent deployment fixes and architectural changes were managed and documented using Antigravity. You can find the detailed implementation history here:
+
+- [**Task Checklist**](docs/antigravity/task.md): Tracking the fix for the missing CLI plugins and build errors.
+- [**Implementation Plan**](docs/antigravity/implementation_plan.md): The approved technical strategy for the recent changes.
+- [**Final Walkthrough**](docs/antigravity/walkthrough.md): A summary of the resolved issues and verification results.
 
 ---
 
