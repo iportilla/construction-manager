@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstructFlow | Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">🏗️</span>
+                <h1>ConstructFlow</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active" data-view="dashboard">
+                        <span class="nav-icon">📊</span>
+                        Dashboard
+                    </li>
+                    <li data-view="projects">
+                        <span class="nav-icon">🏢</span>
+                        Projects
+                    </li>
+                    <li data-view="contacts">
+                        <span class="nav-icon">👤</span>
+                        Contacts
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>v1.0.0</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div class="header-left">
+                    <h2 id="view-title">Dashboard</h2>
+                    <p id="view-subtitle">Welcome back, here's an overview of your projects.</p>
+                </div>
+                <div class="header-right">
+                    <button id="add-btn" class="btn btn-primary">
+                        <span class="btn-icon">+</span>
+                        Add New
+                    </button>
+                </div>
+            </header>
+
+            <section id="content-area" class="content-area">
+                <!-- Content injected by JS -->
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Loading your data...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Add Project</h3>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="data-form">
+                    <!-- Form fields injected by JS -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-btn" class="btn btn-secondary">Cancel</button>
+                <button id="save-btn" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
